@@ -1,0 +1,49 @@
+Column,Type,Description,Table
+CUST_HASH_CMPST_KEY,Bigint,"Represents the Customer Hash Composite Key, a unique identifier for customer records created using a hash function to ensure integrity across systems.",dim_customer
+MU,String,The Business Unit break-down within a Cluster,dim_customer
+BU,String,The Market Unit break-down within a Business Unit,dim_customer
+HRMNZD_CUST_GRPNG_NM,String,,dim_customer
+CSTM_HRCHY_LVL_1_NM,String,,dim_customer
+CUST_LOCL_ATRBT_2_NM,String,,dim_customer
+CUST_LOCL_ATRBT_3_NM,String,,dim_customer
+CUST_LOCL_ATRBT_4_NM,String,,dim_customer
+datetime,Timestamp,"Represents the Timestamp, marking when the record was created or last modified.",dim_customer
+SLS_GEO_HASH_CMPST_KEY,Bigint,"Represents a unique hashed composite key that identifies specific sales geographies, combining multiple attributes for efficient indexing and lookup.",dim_salesgeo
+SYS_ID,Int,,dim_salesgeo
+SUB_SYS_ID,String,,dim_salesgeo
+CTRY_ISO_CDV,String,,dim_salesgeo
+LFL_FLG,String,The Like for Like flag. Like for Like refers to the method of financial comparison by eliminating transactions from prior periods that no longer apply to the current time period.,dim_salesgeo
+RGN,String,"Strategic Cluster. It classifies for Beverages, the markets depending on the Share versus Coke",dim_salesgeo
+CLSTR,String,The Cluster break-down within a Sector,dim_salesgeo
+SCTR,String,"The highest level functional organizational structure of PepsiCo, which will be broken down further by Business Unit, then Market Unit.",dim_salesgeo
+datetime,Timestamp,"Represents the Timestamp, marking when the record was created or last modified.",dim_salesgeo
+TME_HASH_CMPST_KEY,Bigint,"Represents a unique hashed composite key for identifying specific time-related dimensions, combining multiple time attributes for efficient querying",dim_time
+YR,Int,,dim_time
+QRTR,String,"The calendar Quarter within a Year, Q1 through Q4.",dim_time
+PRD,Int,"The numeric portion of the 4 week time Periods that PepsiCo breaks down their financials into. The periods are P1 through P13, and this fields contains the numeric portion of those values.",dim_time
+WK,Int,,dim_time
+VRSN,String,,dim_time
+FCST_MNTH,Int,"In general terms, this refers to the Period that the Forecast begins in and then continues through the rest of the Periods through the end of the Year. For example, a Forecast Month of ""2"" means Period 1 and 2 as Actuals, and P3 through Period 13 Forecasts. There are many special conditions for this column that must be considered.",dim_time
+datetime,Timestamp,"Represents the Timestamp, marking when the record was created or last modified.",dim_time
+FINC_HASH_CMPST_KEY,Bigint,"Stands for Finance Hash Composite Key, a hashed unique identifier for financial data records, enabling efficient data linkage and retrieval.",dim_finance
+BU_ACCT_LVL_1,String,"The highest level in the Account Hierarchy, this generally correlates to the actual P&L Metric that the transaction is related to.",dim_finance
+BU_ACCT_LVL_2,String,The subtype of the Account Level 1 that further breaks down the account hierarchy.,dim_finance
+BU_ACCT_LVL_3,String,The subtype of the Account Level 2 that further breaks down the account hierarchy,dim_finance
+ACCT_TYP,String,"The classification that designates the source of the transaction. This can be from the Income Statement, Cash Flow, Brand P&L, Cause of Change records or other type designations.",dim_finance
+LOCL_CRNCY_CDV,String,,dim_finance
+datetime,Timestamp,"Represents the Timestamp, marking when the record was created or last modified.",dim_finance
+GTM_HASH_CMPST_KEY,Bigint,"Refers to the Go-To-Market Hash Composite Key, uniquely identifying go-to-market strategies or operations within the data.",dim_gotomarket
+GTM_DESC,String,,dim_gotomarket
+GTM_HRCHY_LVL_1_NM,String,,dim_gotomarket
+GTM_HRCHY_LVL_2_NM,String,,dim_gotomarket
+datetime,Timestamp,"Represents the Timestamp, marking when the record was created or last modified.",dim_gotomarket
+PRDT_HASH_CMPST_KEY,Bigint,"Represents the Product Hash Composite Key, a unique identifier for the product record. This hashed key helps ensure data integrity and simplifies the process of identifying and linking products across systems.",dim_product
+PROD_HRCHY_LVL_2_NM,String,,dim_product
+PROD_HRCHY_LVL_3_NM,String,,dim_product
+PROD_LOCL_ATRBT_1_NM,String,,dim_product
+datetime,Timestamp,"Represents the Timestamp, marking when the record was created or last modified.",dim_product
+LOCL_ORG_HASH_CMPST_KEY,Bigint,"Represents a unique hashed composite key to identify specific local organizational entities, combining multiple attributes for efficient lookups.",dim_localorg
+LOCL_ORG_L1_NM,String,,dim_localorg
+LOCL_ORG_HRCHY_LVL_1_NM,String,,dim_localorg
+LOCL_ORG_HRCHY_LVL_3_NM,String,,dim_localorg
+datetime,Timestamp,"Represents the Timestamp, marking when the record was created or last modified.",dim_localorg

@@ -1,0 +1,6 @@
+runtime: python39
+service: app-engine-bash-test-app
+instance_class: F2
+entrypoint: cd src && gunicorn main:app -w 4 -k uvicorn.workers.UvicornWorker --timeout 3000 --threads 3
+vpc_access_connector:
+ name: projects/Genai-api/locations/us-central1/connectors/Genai-function
